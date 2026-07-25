@@ -61,8 +61,8 @@
   --space-7: 48px;
 
   /* ---- Radius ---- */
-  --radius-card: 32px;
-  --radius-pill: 9999px;
+  --radius-card: 16px;
+  --radius-pill: 20px;
 
   /* ---- 기타 ---- */
   --shadow-card: 0 4px 24px rgba(10, 13, 18, 0.06);
@@ -97,6 +97,8 @@ body {
   font-weight: var(--fw-regular);
   line-height: var(--lh-normal);
   -webkit-font-smoothing: antialiased;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 img {
@@ -276,7 +278,6 @@ p {
 }
 
 .overview__text {
-  max-width: 62ch;
   color: var(--color-text-secondary);
   font-size: var(--fs-body);
   line-height: var(--lh-relaxed);
@@ -297,6 +298,7 @@ p {
   gap: var(--space-2);
   overflow-x: auto;
   scrollbar-width: none;
+  padding-top: var(--space-2);
   padding-bottom: var(--space-1);
 }
 
@@ -379,6 +381,10 @@ p {
   flex-direction: column;
   gap: var(--space-6);
   animation: fade-in-up var(--transition-base) ease-out both;
+}
+
+.day-panel[hidden] {
+  display: none;
 }
 
 .day-panel[data-day-panel="day2"] {
