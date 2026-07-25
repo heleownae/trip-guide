@@ -10,22 +10,24 @@
   --color-card: #fafdff;
   --color-text-primary: #0a0d12;
   --color-text-secondary: #535862;
-  --color-text-muted: #93979f;
+  --color-text-muted: #6a6f77;      /* Slice 5 QA: #93979f는 canvas/card 위에서 4.5:1 미달(2.66~2.87:1)이라 어둡게 조정 */
+  --color-text-muted-on-ink: #93979f; /* 진한 ink 배경 위 캡션 전용(예: 히어로 이미지 크레딧) — 원래 값 유지, ink 위 5.76:1 */
   --color-ink: #181d27;      /* 버튼/진한 배경 */
   --color-accent: #0069e0;
 
-  /* ---- 색상: Day 탭 파스텔 wash (임시값, 다음 슬라이스에서 시각 검증) ---- */
+  /* ---- 색상: Day 탭 파스텔 wash ---- */
+  /* Slice 5 QA: 각 accent는 자기 wash 배경 위 텍스트로도 쓰이는데 원래 값은 3:1 안팎이라 4.5:1 이상으로 어둡게 조정 */
   --wash-lavender: #efe9fb;
-  --wash-lavender-accent: #7c6fd1;
+  --wash-lavender-accent: #6859ca;
 
   --wash-mint: #e2f6ee;
-  --wash-mint-accent: #1f9d73;
+  --wash-mint-accent: #187c5b;
 
   --wash-powder: #e3f0fb;
-  --wash-powder-accent: #2f7fc4;
+  --wash-powder-accent: #296fab;
 
   --wash-peach: #fdece1;
-  --wash-peach-accent: #d97a4a;
+  --wash-peach-accent: #ac5224;
 
   /* ---- 타이포그래피 ---- */
   --font-family-base: "Pretendard Variable", Pretendard, -apple-system,
@@ -439,7 +441,7 @@ p {
 .day-panel__hero-credit {
   padding: var(--space-2) var(--space-4);
   background-color: var(--color-ink);
-  color: var(--color-text-muted);
+  color: var(--color-text-muted-on-ink);
   font-size: var(--fs-caption);
 }
 
