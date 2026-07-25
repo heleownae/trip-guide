@@ -45,12 +45,298 @@
         교토는 천 년 넘게 일본의 수도였던 도시로, 시내 곳곳에 사찰과 정원이 그대로 남아있어 걷는 것만으로도 여행이 되는 곳입니다. 방문 시기(11월 중순)는 단풍 절정기라 어디를 가든 평소보다 사람이 많을 걸 감안하고 움직이면 좋습니다.
       </p>
     </section>
+
+    <section class="day-guide" aria-labelledby="day-guide-heading">
+      <h2 id="day-guide-heading" class="visually-hidden">일자별 일정</h2>
+
+      <div class="day-tabs" role="tablist" aria-label="여행 일자 선택">
+        <button
+          type="button"
+          class="day-tabs__tab"
+          role="tab"
+          id="tab-day1"
+          aria-controls="panel-day1"
+          aria-selected="true"
+          data-day-tab="day1"
+        >
+          <span class="day-tabs__label">Day 1</span>
+          <span class="day-tabs__date">11.14 (토)</span>
+        </button>
+        <button
+          type="button"
+          class="day-tabs__tab"
+          role="tab"
+          id="tab-day2"
+          aria-controls="panel-day2"
+          aria-selected="false"
+          tabindex="-1"
+          data-day-tab="day2"
+        >
+          <span class="day-tabs__label">Day 2</span>
+          <span class="day-tabs__date">11.15 (일)</span>
+        </button>
+        <button
+          type="button"
+          class="day-tabs__tab"
+          role="tab"
+          id="tab-day3"
+          aria-controls="panel-day3"
+          aria-selected="false"
+          tabindex="-1"
+          data-day-tab="day3"
+        >
+          <span class="day-tabs__label">Day 3</span>
+          <span class="day-tabs__date">11.16 (월)</span>
+        </button>
+        <button
+          type="button"
+          class="day-tabs__tab"
+          role="tab"
+          id="tab-day4"
+          aria-controls="panel-day4"
+          aria-selected="false"
+          tabindex="-1"
+          data-day-tab="day4"
+        >
+          <span class="day-tabs__label">Day 4</span>
+          <span class="day-tabs__date">11.17 (화)</span>
+        </button>
+      </div>
+
+      <div class="day-panels">
+        <!-- ===================== Day 1 : 도착일 (전체 콘텐츠) ===================== -->
+        <section
+          class="day-panel"
+          role="tabpanel"
+          id="panel-day1"
+          aria-labelledby="tab-day1"
+          data-day-panel="day1"
+          tabindex="0"
+        >
+          <header class="day-panel__header">
+            <p class="day-panel__eyebrow">DAY 1 · 도착일</p>
+            <h3 class="day-panel__title">11/14 (토) | 1일차 (도착일)</h3>
+          </header>
+
+          <figure class="day-panel__hero">
+            <img
+              src="https://images.unsplash.com/photo-1774550933344-80a5a418315e?fm=jpg&amp;q=75&amp;w=1400&amp;auto=format&amp;fit=crop"
+              alt="후시미이나리 신사의 붉은 도리이가 계단을 따라 이어진 모습"
+              loading="lazy"
+              width="1400"
+              height="933"
+            />
+            <figcaption class="day-panel__hero-credit">
+              사진: <a href="https://unsplash.com/photos/red-torii-gates-lead-up-stone-stairs-at-a-shrine-iW4GxBkAOjs" target="_blank" rel="noopener noreferrer">Jakub Tomasik / Unsplash</a>
+            </figcaption>
+          </figure>
+
+          <div class="day-block">
+            <h4 class="day-block__heading">타임라인</h4>
+            <div class="day-timeline">
+              <table class="day-timeline__table">
+                <caption class="visually-hidden">1일차 시간대별 일정</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">시간대</th>
+                    <th scope="col">구분</th>
+                    <th scope="col">방문지</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-label="시간대"><span class="time-badge">🌅 오전</span></td>
+                    <td data-label="구분"><span class="kind-badge">콘텐츠</span></td>
+                    <td data-label="방문지">이동일 (공항 도착, 시내 이동)</td>
+                  </tr>
+                  <tr>
+                    <td data-label="시간대"><span class="time-badge">☀️ 오후</span></td>
+                    <td data-label="구분"><span class="kind-badge kind-badge--meal">점심식사</span></td>
+                    <td data-label="방문지">교토역 인근</td>
+                  </tr>
+                  <tr>
+                    <td data-label="시간대"><span class="time-badge">☀️ 오후</span></td>
+                    <td data-label="구분"><span class="kind-badge">콘텐츠</span></td>
+                    <td data-label="방문지">숙소 체크인, 짐 정리</td>
+                  </tr>
+                  <tr>
+                    <td data-label="시간대"><span class="time-badge">☀️ 오후</span></td>
+                    <td data-label="구분"><span class="kind-badge">콘텐츠</span></td>
+                    <td data-label="방문지">혼푸쿠지 (히가시야마니조)</td>
+                  </tr>
+                  <tr>
+                    <td data-label="시간대"><span class="time-badge">🌙 밤</span></td>
+                    <td data-label="구분"><span class="kind-badge kind-badge--meal">저녁식사</span></td>
+                    <td data-label="방문지">후시미이나리·교토역 근처</td>
+                  </tr>
+                  <tr>
+                    <td data-label="시간대"><span class="time-badge">🌙 밤</span></td>
+                    <td data-label="구분"><span class="kind-badge">콘텐츠</span></td>
+                    <td data-label="방문지">후시미이나리 신사 야경 산책</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="day-block">
+            <h4 class="day-block__heading">방문 포인트</h4>
+            <div class="day-points">
+              <article class="point-card">
+                <h5 class="point-card__title">혼푸쿠지</h5>
+                <p class="point-card__text">
+                  관광객에게 덜 알려진 조용한 사찰이라 한적하게 둘러보기 좋습니다. 백벽으로 된 외관이 무가저택 같은 느낌을 주고, 본존은 아미타여래입니다.
+                </p>
+                <p class="point-card__tip">
+                  💡 게이한 본선 산조역에서 도보 10분 거리라, 여기서 같은 노선을 타고 후시미이나리까지 바로 이동할 수 있습니다.
+                </p>
+              </article>
+
+              <article class="point-card">
+                <h5 class="point-card__title">후시미이나리 신사</h5>
+                <p class="point-card__text">
+                  24시간 개방이라 밤에 가도 무방하고, 낮보다 사람이 훨씬 적어서 사진 찍기도 좋습니다. 하이라이트는 센본토리이 &mdash; 붉은 도리이가 끝없이 이어지는 산길입니다.
+                </p>
+                <p class="point-card__text">밤 산책은 체력에 따라 두 가지 중 선택하면 됩니다.</p>
+                <ul class="point-card__list">
+                  <li>
+                    <strong>오쿠샤까지</strong> &mdash; 로몬(정문) → 센본토리이 터널 → 오쿠샤(오모카루이시 소원돌)까지 왕복 30&ndash;40분. 계단이 완만하고 조명도 잘 되어 있어서 저녁 먹은 직후에도 무리 없습니다.
+                  </li>
+                  <li>
+                    <strong>요츠츠지 전망대까지</strong> &mdash; 왕복 1시간&ndash;1시간 반. 오쿠샤에서 오르막 계단을 더 올라가야 하고, 대신 교토 시내 전경을 볼 수 있습니다.
+                  </li>
+                </ul>
+                <p class="point-card__tip">⚠️ 그 위 정상 쪽은 조명이 약해서 밤엔 비추천입니다. 낮에 가는 게 안전합니다.</p>
+                <p class="point-card__tip">✨ 오쿠샤 근처 오모카루이시(소원돌)는 등롱을 들어봤을 때 생각보다 가벼우면 소원이 이뤄지기 쉽다는 전설이 있습니다.</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="day-block">
+            <h4 class="day-block__heading">식당 &middot; 카페 후보</h4>
+            <div class="day-eats">
+              <div class="day-eats__group">
+                <p class="day-eats__label">🍜 점심 후보 &middot; 교토역 인근</p>
+                <ul class="day-eats__list">
+                  <li>
+                    <span class="day-eats__name">교토역 이세탄 라멘코지</span>
+                    <span class="day-eats__desc">여러 라멘집이 모여있어 취향껏 고르기 좋음</span>
+                  </li>
+                  <li>
+                    <span class="day-eats__name">교토역 지하상가 식당가</span>
+                    <span class="day-eats__desc">이동 동선상 부담 없이 들르기 좋음</span>
+                  </li>
+                  <li>
+                    <span class="day-eats__name">교토가츠규 교토역점</span>
+                    <span class="day-eats__desc">규카츠, 무난하게 다 같이 먹기 좋음</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="day-eats__group">
+                <p class="day-eats__label">🍢 저녁 후보 &middot; 후시미이나리·교토역 근처</p>
+                <ul class="day-eats__list">
+                  <li>
+                    <span class="day-eats__name">이나후쿠 (稲福)</span>
+                    <span class="day-eats__desc">후시미이나리 신사 바로 앞 노포, 이나리즈시·오뎅</span>
+                  </li>
+                  <li>
+                    <span class="day-eats__name">교토가츠규 후시미이나리점</span>
+                    <span class="day-eats__desc">규카츠 전문</span>
+                  </li>
+                  <li>
+                    <span class="day-eats__name">교토역 포르타 지하상가</span>
+                    <span class="day-eats__desc">늦게 끝나도 접근성 좋음</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="day-block">
+            <h4 class="day-block__heading">지도</h4>
+            <div class="day-maps">
+              <div class="map-card">
+                <p class="map-card__title">📍 혼푸쿠지</p>
+                <div class="map-embed">
+                  <iframe
+                    src="https://www.google.com/maps?q=%E6%9C%AC%E7%A6%8F%E5%AF%BA+%E6%9D%B1%E5%B1%B1%E4%BA%8C%E6%9D%A1+%E4%BA%AC%E9%83%BD&output=embed"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="혼푸쿠지(本福寺) 위치 지도"
+                  ></iframe>
+                </div>
+              </div>
+              <div class="map-card">
+                <p class="map-card__title">📍 후시미이나리 신사</p>
+                <div class="map-embed">
+                  <iframe
+                    src="https://www.google.com/maps?q=Fushimi+Inari+Taisha&output=embed"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="후시미이나리 신사 위치 지도"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================== Day 2~4 : 다음 슬라이스에서 채움 ===================== -->
+        <section
+          class="day-panel day-panel--placeholder"
+          role="tabpanel"
+          id="panel-day2"
+          aria-labelledby="tab-day2"
+          data-day-panel="day2"
+          tabindex="0"
+          hidden
+        >
+          <header class="day-panel__header">
+            <p class="day-panel__eyebrow">DAY 2</p>
+            <h3 class="day-panel__title">11/15 (일) | 2일차</h3>
+          </header>
+          <p class="day-panel__placeholder">Day2 콘텐츠 준비 중입니다.</p>
+        </section>
+
+        <section
+          class="day-panel day-panel--placeholder"
+          role="tabpanel"
+          id="panel-day3"
+          aria-labelledby="tab-day3"
+          data-day-panel="day3"
+          tabindex="0"
+          hidden
+        >
+          <header class="day-panel__header">
+            <p class="day-panel__eyebrow">DAY 3</p>
+            <h3 class="day-panel__title">11/16 (월) | 3일차</h3>
+          </header>
+          <p class="day-panel__placeholder">Day3 콘텐츠 준비 중입니다.</p>
+        </section>
+
+        <section
+          class="day-panel day-panel--placeholder"
+          role="tabpanel"
+          id="panel-day4"
+          aria-labelledby="tab-day4"
+          data-day-panel="day4"
+          tabindex="0"
+          hidden
+        >
+          <header class="day-panel__header">
+            <p class="day-panel__eyebrow">DAY 4</p>
+            <h3 class="day-panel__title">11/17 (화) | 4일차</h3>
+          </header>
+          <p class="day-panel__placeholder">Day4 콘텐츠 준비 중입니다.</p>
+        </section>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
     <p>&copy; 2026 교토 여행 가이드</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script type="module" src="script.js"></script>
 </body>
 </html>

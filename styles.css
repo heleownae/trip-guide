@@ -118,6 +118,18 @@ button {
   cursor: pointer;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 h1,
 h2,
 h3,
@@ -269,6 +281,409 @@ p {
 }
 
 /* ==========================================================================
+   Day 탭 네비게이션
+   ========================================================================== */
+
+.day-guide {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.day-tabs {
+  display: flex;
+  gap: var(--space-2);
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-bottom: var(--space-1);
+}
+
+.day-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.day-tabs__tab {
+  --tab-wash: var(--wash-lavender);
+  --tab-accent: var(--wash-lavender-accent);
+
+  flex: 1 0 auto;
+  min-width: 84px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: var(--space-3) var(--space-3);
+  border: 1.5px solid transparent;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-card);
+  color: var(--color-text-secondary);
+  box-shadow: var(--shadow-card);
+  transition: background-color var(--transition-base), color var(--transition-fast),
+    border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.day-tabs__tab[data-day-tab="day2"] {
+  --tab-wash: var(--wash-mint);
+  --tab-accent: var(--wash-mint-accent);
+}
+
+.day-tabs__tab[data-day-tab="day3"] {
+  --tab-wash: var(--wash-powder);
+  --tab-accent: var(--wash-powder-accent);
+}
+
+.day-tabs__tab[data-day-tab="day4"] {
+  --tab-wash: var(--wash-peach);
+  --tab-accent: var(--wash-peach-accent);
+}
+
+.day-tabs__tab:hover,
+.day-tabs__tab:focus-visible {
+  background-color: var(--tab-wash);
+  color: var(--tab-accent);
+}
+
+.day-tabs__tab--active {
+  background-color: var(--tab-wash);
+  border-color: var(--tab-accent);
+  color: var(--tab-accent);
+  transform: translateY(-1px);
+}
+
+.day-tabs__label {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+}
+
+.day-tabs__date {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-medium);
+  color: inherit;
+  opacity: 0.75;
+}
+
+/* ==========================================================================
+   Day 패널 공통 프레임 (파스텔 wash 배경)
+   ========================================================================== */
+
+.day-panel {
+  --panel-wash: var(--wash-lavender);
+  --panel-accent: var(--wash-lavender-accent);
+
+  background-color: var(--panel-wash);
+  border-radius: var(--radius-card);
+  padding: var(--space-5) var(--space-4) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  animation: fade-in-up var(--transition-base) ease-out both;
+}
+
+.day-panel[data-day-panel="day2"] {
+  --panel-wash: var(--wash-mint);
+  --panel-accent: var(--wash-mint-accent);
+}
+
+.day-panel[data-day-panel="day3"] {
+  --panel-wash: var(--wash-powder);
+  --panel-accent: var(--wash-powder-accent);
+}
+
+.day-panel[data-day-panel="day4"] {
+  --panel-wash: var(--wash-peach);
+  --panel-accent: var(--wash-peach-accent);
+}
+
+.day-panel__eyebrow {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.14em;
+  color: var(--panel-accent);
+  margin: 0 0 var(--space-1);
+}
+
+.day-panel__title {
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-extrabold);
+  color: var(--color-text-primary);
+  letter-spacing: -0.01em;
+}
+
+.day-panel__placeholder {
+  color: var(--color-text-secondary);
+  font-size: var(--fs-body);
+  padding: var(--space-6) 0;
+}
+
+.day-panel--placeholder {
+  min-height: 160px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.day-panel__hero {
+  margin: 0;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.day-panel__hero img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.day-panel__hero-credit {
+  padding: var(--space-2) var(--space-4);
+  background-color: var(--color-ink);
+  color: var(--color-text-muted);
+  font-size: var(--fs-caption);
+}
+
+.day-panel__hero-credit a {
+  color: var(--color-card);
+}
+
+/* ---- 블록 공통 ---- */
+
+.day-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.day-block__heading {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  color: var(--color-text-primary);
+}
+
+/* ==========================================================================
+   타임라인 표
+   ========================================================================== */
+
+.day-timeline {
+  background-color: var(--color-card);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-2);
+  overflow-x: auto;
+}
+
+.day-timeline__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.day-timeline__table th {
+  text-align: left;
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-muted);
+  padding: var(--space-3) var(--space-3) var(--space-2);
+}
+
+.day-timeline__table td {
+  padding: var(--space-3);
+  font-size: var(--fs-small);
+  color: var(--color-text-secondary);
+  border-top: 1px solid var(--color-canvas);
+  vertical-align: middle;
+}
+
+.day-timeline__table tbody tr:first-child td {
+  border-top: none;
+}
+
+.day-timeline__table td[data-label="방문지"] {
+  color: var(--color-text-primary);
+  font-weight: var(--fw-medium);
+}
+
+.time-badge {
+  white-space: nowrap;
+  font-size: var(--fs-small);
+  font-weight: var(--fw-semibold);
+}
+
+.kind-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px var(--space-3);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-secondary);
+  background-color: var(--color-canvas);
+  white-space: nowrap;
+}
+
+.kind-badge--meal {
+  color: var(--panel-accent);
+  background-color: var(--panel-wash);
+}
+
+/* ==========================================================================
+   방문 포인트 카드
+   ========================================================================== */
+
+.day-points {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+.point-card {
+  background-color: var(--color-card);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.point-card__title {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  color: var(--panel-accent);
+}
+
+.point-card__text {
+  font-size: var(--fs-body);
+  line-height: var(--lh-relaxed);
+  color: var(--color-text-secondary);
+}
+
+.point-card__list {
+  margin: 0;
+  padding-left: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  color: var(--color-text-secondary);
+  font-size: var(--fs-small);
+  line-height: var(--lh-relaxed);
+}
+
+.point-card__list strong {
+  color: var(--color-text-primary);
+}
+
+.point-card__tip {
+  font-size: var(--fs-small);
+  line-height: var(--lh-relaxed);
+  color: var(--color-text-secondary);
+  background-color: var(--color-canvas);
+  border-radius: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+}
+
+/* ==========================================================================
+   식당 / 카페 후보 리스트
+   ========================================================================== */
+
+.day-eats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+.day-eats__group {
+  background-color: var(--color-card);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-5);
+}
+
+.day-eats__label {
+  font-size: var(--fs-small);
+  font-weight: var(--fw-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-4);
+}
+
+.day-eats__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.day-eats__list li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-canvas);
+}
+
+.day-eats__list li:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+
+.day-eats__name {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-primary);
+}
+
+.day-eats__desc {
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   구글맵 embed 카드
+   ========================================================================== */
+
+.day-maps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+.map-card {
+  background-color: var(--color-card);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.map-card__title {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-bold);
+  color: var(--color-text-primary);
+  padding: 0 var(--space-1);
+}
+
+.map-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--space-4);
+  overflow: hidden;
+  background-color: var(--color-canvas);
+}
+
+.map-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ==========================================================================
    공용 컴포넌트 (버튼 예시 — 다음 슬라이스에서 확장)
    ========================================================================== */
 
@@ -311,6 +726,17 @@ p {
     padding: 0 var(--space-6) var(--space-7);
     gap: var(--space-7);
   }
+
+  .day-tabs__tab {
+    flex: 0 1 auto;
+    min-width: 120px;
+  }
+
+  .day-points,
+  .day-eats,
+  .day-maps {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 /* ==========================================================================
@@ -328,6 +754,11 @@ p {
 
   .site-main {
     padding: 0 var(--space-7) var(--space-7);
+  }
+
+  .day-timeline__table th,
+  .day-timeline__table td {
+    padding: var(--space-4);
   }
 }
 
