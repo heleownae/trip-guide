@@ -61,7 +61,6 @@
   /* ---- Radius ---- */
   --radius-card: 32px;
   --radius-pill: 9999px;
-  --radius-sm: 12px;
 
   /* ---- 기타 ---- */
   --shadow-card: 0 4px 24px rgba(10, 13, 18, 0.06);
@@ -131,6 +130,9 @@ p {
    ========================================================================== */
 
 .site-header {
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
   padding: var(--space-4) var(--space-4);
 }
 
