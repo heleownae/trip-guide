@@ -362,7 +362,6 @@ p {
   font-size: var(--fs-caption);
   font-weight: var(--fw-medium);
   color: inherit;
-  opacity: 0.75;
 }
 
 /* ==========================================================================
@@ -446,6 +445,9 @@ p {
 }
 
 .day-panel__hero-credit a {
+  display: inline-block;
+  padding: var(--space-4) 0;
+  margin: calc(var(--space-4) * -1) 0;
   color: var(--color-card);
 }
 
