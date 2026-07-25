@@ -16,8 +16,10 @@ test("resolveActiveDay: 목록의 첫 번째 dayId도 정상적으로 반환한�
   assert.equal(resolveActiveDay(DAYS, "day1"), "day1");
 });
 
-test("resolveActiveDay: 목록의 마지막 dayId도 정상적으로 반환한다", () => {
-  assert.equal(resolveActiveDay(DAYS, "day4"), "day4");
+test("resolveActiveDay: days가 배열이 아니면 null을 반환한다", () => {
+  assert.equal(resolveActiveDay(null, "day1"), null);
+  assert.equal(resolveActiveDay(undefined, "day1"), null);
+  assert.equal(resolveActiveDay({}, "day1"), null);
 });
 
 test("resolveActiveDay: 목록에 없는 targetId는 첫 번째 dayId로 폴백한다", () => {

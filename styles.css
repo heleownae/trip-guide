@@ -498,7 +498,7 @@ p {
   border-top: none;
 }
 
-.day-timeline__table td[data-label="방문지"] {
+.day-timeline__table td.day-timeline__place {
   color: var(--color-text-primary);
   font-weight: var(--fw-medium);
 }
